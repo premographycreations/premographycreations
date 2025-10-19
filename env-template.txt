@@ -1,0 +1,13 @@
+# AWS Configuration - Copy this to .env file
+# Make sure to replace the placeholder values with your actual AWS credentials
+
+VITE_AWS_REGION=us-east-1
+VITE_AWS_ACCESS_KEY=your_actual_access_key_here
+VITE_AWS_SECRET_KEY=your_actual_secret_key_here
+VITE_AWS_BUCKET_NAME=premographycreations
+
+# Important Notes:
+# 1. Create a .env file in your project root (same level as package.json)
+# 2. Never commit your .env file to version control
+# 3. Make sure your AWS user has S3 ListBucket and GetObject permissions
+# 4. The bucket name should match your actual S3 bucket name

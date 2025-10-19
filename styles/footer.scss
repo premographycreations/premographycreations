@@ -1,0 +1,139 @@
+.footer {
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  padding: 2.5rem 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+
+  // Smooth fade-in animation
+  animation: fadeIn 0.8s ease-in-out;
+
+  h2, h3 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.8rem;
+  }
+
+  a {
+    color: #ff9800;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #ffa733;
+      text-shadow: 0 0 8px rgba(255, 152, 0, 0.6);
+      transform: translateY(-2px);
+    }
+  }
+
+  // Contact Section
+  .contact {
+    text-align: center;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 0.4rem 0;
+        font-size: 1rem;
+        line-height: 1.5;
+
+        strong {
+          color: #ffa733;
+        }
+      }
+      .terms{
+        color: blue ;
+        text-decoration: underline;
+        font-weight: bold;
+        cursor: pointer;
+        font-size: 20px;
+      }
+    }
+  }
+
+  // Social Links
+  .social-links {
+    text-align: center;
+
+    .icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        background: rgba(255, 255, 255, 0.05);
+
+        &:hover {
+          background: rgba(255, 152, 0, 0.15);
+          border-color: #ff9800;
+          box-shadow: 0 0 10px rgba(255, 152, 0, 0.4);
+        }
+      }
+    }
+  }
+
+  // Rights / Copyright
+  .rights {
+    font-size: 0.9rem;
+    color: #bbb;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+
+    .contact ul li {
+      font-size: 0.95rem;
+    }
+
+    .social-links .icons a {
+      font-size: 0.85rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    gap: 1.5rem;
+
+    h2, h3 {
+      font-size: 1.1rem;
+    }
+
+    .contact ul li {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Fade-in animation keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

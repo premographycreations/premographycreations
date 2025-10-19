@@ -1,0 +1,236 @@
+// COLORS & VARIABLES
+$primary-color: #ffcc00;
+$bg-dark: #0f0f0f;
+$text-light: #f5f5f5;
+$text-muted: #b3b3b3;
+$card-bg: #1b1b1b;
+$accent: #8650bc;
+
+// GLOBAL ANIMATIONS
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// MAIN CONTAINER
+.packages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding: 60px 5%;
+  background-color: $bg-dark;
+  color: $text-light;
+  animation: fadeInUp 0.8s ease-in-out;
+
+  @media (max-width: 768px) {
+    gap: 40px;
+    padding: 40px 5%;
+  }
+}
+
+// PACKAGE CARD
+.package-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $card-bg;
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+
+  @media (max-width: 900px) {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  // IMAGE SECTION
+  .package-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInLeft 1s ease-in-out;
+
+    img {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(255, 204, 0, 0.3);
+      }
+    }
+
+    .img-placeholder {
+      width: 100%;
+      max-width: 420px;
+      height: 280px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #222, #333);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-muted;
+      font-size: 1.1rem;
+      border: 2px dashed #444;
+    }
+  }
+
+  // DETAILS SECTION
+  .package-details {
+    flex: 1;
+    padding: 20px 30px;
+    animation: fadeInRight 1s ease-in-out;
+
+    @media (max-width: 900px) {
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: white;
+      position: relative;
+
+      &::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: $accent;
+        margin-top: 5px;
+        border-radius: 2px;
+      }
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: $primary-color;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: $text-muted;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .deliverables,
+    .free-section {
+      margin-top: 15px;
+
+      h4 {
+        color: $primary-color;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+        position: relative;
+
+        &::before {
+          content: "★";
+          color: $accent;
+          margin-right: 6px;
+        }
+      }
+
+      ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        font-size: 0.95rem;
+
+        li {
+          margin-bottom: 6px;
+          color: $text-light;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: $primary-color;
+          }
+        }
+
+        @media (max-width: 900px) {
+          margin-left: 0;
+          list-style: none;
+        }
+      }
+    }
+
+    .free-section {
+      margin-top: 25px;
+
+      h4 {
+        color: lighten($primary-color, 15%);
+      }
+
+      ul li::before {
+        content: "🎁 ";
+      }
+    }
+  }
+}
+
+// RESPONSIVENESS
+@media (max-width: 600px) {
+  .package-card {
+    padding: 20px;
+  }
+
+  .package-details h2 {
+    font-size: 1.4rem;
+  }
+
+  .package-details h3 {
+    font-size: 1rem;
+  }
+
+  .package-img img,
+  .img-placeholder {
+    max-width: 100%;
+    height: auto;
+  }
+}

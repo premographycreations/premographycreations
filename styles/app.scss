@@ -1,0 +1,25 @@
+@use "home";
+// @use "services";
+@use "about";
+// @use "contact";
+@use "nav.module";
+@use "whatsapp";
+@use "footer";
+@use "contact";
+@use "team";
+@use "portfolio";
+@use "portfolioview";
+@use "sectionview";
+@use "subfolderview";
+@use "servicepage";
+@use "photoshootpage";
+@use "exhibition";
+@use "packages";
+@use "PhotoGallery";
+@use "PortfolioSectionView";
+@use "termsandconditions";
+:root{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+font-size: 16px;
+}

@@ -1,0 +1,62 @@
+.wedding {
+  text-align: center;
+
+  img {
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .wedding-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #555;
+    }
+  }
+}
+
+.wedding-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+
+  img {
+    width: 100%;
+    height: auto; // keeps aspect ratio, no cropping
+    display: block;
+    border-radius: 8px;
+  
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &.big {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+  }
+}
+
+// Responsive for mobile
+@media (max-width: 768px) {
+  .wedding-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .wedding-gallery {
+    grid-template-columns: 1fr;
+  }
+}

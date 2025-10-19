@@ -1,0 +1,162 @@
+// VARIABLES
+$bg-dark: #0e0e0e;
+$text-light: #f5f5f5;
+$text-muted: #bbb;
+$accent: #8650bc;
+$highlight: #ffcc00;
+$card-bg: #1b1b1b;
+
+// ANIMATIONS
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideHighlight {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80px;
+  }
+}
+
+// PAGE STYLES
+.terms-page {
+  background-color: $bg-dark;
+  color: $text-light;
+  padding: 60px 8%;
+  line-height: 1.7;
+  animation: fadeUp 1s ease-in-out;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    padding: 40px 5%;
+  }
+
+  .terms-header {
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeUp 0.8s ease-in-out;
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      position: relative;
+      display: inline-block;
+
+      &::after {
+        content: "";
+        display: block;
+        height: 3px;
+        background: $accent;
+        margin: 10px auto 0;
+        animation: slideHighlight 1s ease forwards;
+      }
+    }
+
+    p {
+      margin-top: 10px;
+      color: $text-muted;
+      font-size: 1rem;
+    }
+  }
+
+  .terms-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    .terms-section {
+      background: $card-bg;
+      border-radius: 14px;
+      padding: 30px 40px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      transition: all 0.3s ease;
+      animation: fadeUp 0.8s ease-in-out;
+      cursor: default;
+
+      &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 25px rgba(134, 80, 188, 0.4);
+      }
+
+      h2 {
+        color: $highlight;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
+      }
+
+      .subsection {
+        margin-bottom: 20px;
+
+        h3 {
+          color: $accent;
+          margin-bottom: 8px;
+          font-size: 1.1rem;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: lighten($accent, 15%);
+          }
+        }
+
+        p {
+          white-space: pre-line;
+          font-size: 0.95rem;
+          color: $text-light;
+          margin-bottom: 10px;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $highlight;
+          }
+        }
+      }
+    }
+  }
+
+  .terms-footer {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+
+    h3 {
+      color: $accent;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    p {
+      color: $text-muted;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// RESPONSIVE
+@media (max-width: 600px) {
+  .terms-page {
+    .terms-header h1 {
+      font-size: 1.8rem;
+    }
+    .terms-section {
+      padding: 20px;
+    }
+    h2 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}

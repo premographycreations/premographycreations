@@ -1,0 +1,87 @@
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  .team {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 0.8s ease forwards;
+
+    // Alternate layout: even rows reversed
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .team-img {
+      width: 50%;
+      max-width: 500px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    .team-content {
+      width: 50%;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: #ff9800;
+      }
+
+      p {
+        color: #555;
+        line-height: 1.6;
+      }
+    }
+  }
+
+  // Responsive Design
+  @media (max-width: 768px) {
+    .team {
+      flex-direction: column !important;
+      text-align: center;
+
+      .team-img,
+      .team-content {
+        width: 100%;
+      }
+
+      .team-content {
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+
+// Animation
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
