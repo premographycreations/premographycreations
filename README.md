@@ -1,3 +1,32 @@
+# CLONE GIT REPO
+git clone https://github.com/premographycreations/premographycreations.git
+
+# OWNERSHIP PERMISSION RESET
+sudo chown -R bitnami:bitnami /home/bitnami/premographycreations
+cd /home/bitnami/premographycreations
+sudo chown -R bitnami:bitnami .
+
+# INSTALL VITE v5.4.10 (STABLE VERSION FOR NODE v22.18.0)
+npm install vite@5.4.10
+npx vite --version
+
+# REINSTALL ALL DEPENDENCIES
+npm install
+
+# CHECK VITE BINARY PERMISSION
+ls -l node_modules/.bin/vite
+chmod +x node_modules/.bin/vite
+
+# VERIFY VITE CLI EXISTS
+ls node_modules/vite/dist/node/cli.js
+
+# BUILD APPLICATION
+npm run build
+npx vite build
+npm ls vite
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
