@@ -11,7 +11,7 @@ npm install vite@5.4.10
 npx vite --version
 
 # REINSTALL ALL DEPENDENCIES
-npm install
+npm install --production
 
 # CHECK VITE BINARY PERMISSION
 ls -l node_modules/.bin/vite
