@@ -21,7 +21,7 @@ const PortfolioHome = () => {
         // attach a cover image for each section (first subfolder image)
         const enriched = await Promise.all(
           result.map(async (name) => {
-            const cover = await getFolderCoverImages(name, ""); // optional default cover logic
+            const cover = await getFolderCoverImages(name); // optional default cover logic
             return { name, cover };
           })
         );
