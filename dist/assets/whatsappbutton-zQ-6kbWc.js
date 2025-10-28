@@ -1,0 +1,1 @@
+import{j as a}from"./index-CbuayKso.js";const e=()=>a.jsx("a",{href:"https://wa.me/918697019885",className:"whatsapp-float",target:"_blank",rel:"noopener noreferrer",children:a.jsx("i",{className:"bx bxl-whatsapp"})});export{e as W};
