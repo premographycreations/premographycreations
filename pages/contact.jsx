@@ -64,12 +64,12 @@ const contact = () => {
               <i className="fab fa-whatsapp fa-2x"></i>
             </a>
             <a
-              href="https://www.linkedin.com/in/premsagar89"
+              href="https://www.google.com/search?q=premography+creations&oq=&gs_lcrp=EgZjaHJvbWUqBggBEEUYOzIGCAAQRRg5MgYIARBFGDsyBggCECMYJzILCAMQABgKGAsYgAQyCwgEEAAYChgLGIAEMgsIBRAAGAoYCxiABDILCAYQABgKGAsYgAQyCwgHEAAYChgLGIAEMgsICBAAGAoYCxiABDILCAkQABgKGAsYgATSAQoxMTI4N2owajE1qAIAsAIA&sourceid=chrome&ie=UTF-8"
               target="_blank"
               rel="noopener noreferrer"
             >
               {/* LinkedIn Icon */}
-              <i className="fab fa-linkedin fa-2x"></i>
+              <i className="fab fa-google fa-2x"></i>
             </a>
           </div>
         </section>
